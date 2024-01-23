@@ -13,4 +13,14 @@ export class TodoService {
   findAll(): Observable<Todo[]> {
     return this.http.get<Todo[]>(environment.url_todos);
   }
+
+  delete(todo:Todo): Observable<Todo> {
+    const url = `${environment.url_todos}/${todo.id}`
+    return this.http.delete<Todo>(url);
+  }
+
+  save(todo:Todo): Observable<Todo>{
+    return this.http.post<Todo>(environment.url_todos,todo);
+  }
+
 }
