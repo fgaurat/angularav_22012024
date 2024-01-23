@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
+import { Todo } from '../../models/todo';
 
 @Component({
   selector: 'app-todo-list',
@@ -16,5 +17,5 @@ export class TodoListComponent {
     'action',
   ];
 
-  todos$=Observable<>
+  todos$:Observable<Todo[]> = EMPTY
 }
